@@ -1,0 +1,53 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    overflow: hidden;
+}  
+
+a{
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    display: block;
+    width: 20%;
+    margin: 20px auto;
+    text-decoration: none;
+}
+a:hover {
+    font-weight: bold;
+}
+
+.home__images {
+    width: 110%;
+}
+
+.home .home__content a {
+    background: #B6D4B9;
+    border: 1px solid #B6D4B9;
+    border-radius: 20px;
+    color: #023047;
+    display: block;
+    font-size: 1.5rem;
+    margin: 20px auto;
+    padding: 5px 20px;
+    text-decoration: none;
+    width: 60%;
+}
+
+/*===== ESTILOS mobile =====*/
+@media (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        min-height: 70%;
+    }    
+    .home__images {
+        width: 40%;
+        margin: 40px;
+    }
+    
+}

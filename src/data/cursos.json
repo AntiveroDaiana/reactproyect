@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Html",
+        "description": "Aprende los fundamentos del desarrollo web desde cero y paso a paso.",
+        "price": 500,
+        "hours": "10",
+        "image": "/img/html.png",
+        "category": "Desarrollo Web"
+    },
+    {
+        "id": 2,
+        "name": "Css",
+        "description": "Domina CSS3 (Desde cero a master) Curso 100% Practico [Flexbox, CSS GRID, Animaciones en CSS3, BEM, Responsive Design]",
+        "price": 600,
+        "hours": "35",
+        "image": "/img/css.png",
+        "category": "Desarrollo Web"
+    },
+    {
+        "id": 3,
+        "name": "Bootstrap 5",
+        "description": "Aprende a crear cualquier sitio web adaptable a dispositivos móviles con Boostrap 5, el mejor framework de diseño web",
+        "price": 600,
+        "hours": "10",
+        "image": "/img/bootstrap.png",
+        "category": "Desarrollo Web"
+    },
+    {
+        "id": 4,
+        "name": "Python",
+        "description": "Aprenderás Python y sus mejores módulos: Tkinter, SQLite, Numpy, Pandas, Matplotlib, Pipenv, Django, FastAPI, Bs4 y más!",
+        "price": 1000,
+        "hours": "100",
+        "image": "/img/python.png",
+        "category": "Lenguajes"
+    },
+    {
+        "id": 5,
+        "name": "Java",
+        "description": "Aprende Java a profundidad desde cero, sin presentaciones aburridas pero con todos los conceptos explicados a detalle.",
+        "price": 800,
+        "hours": "100",
+        "image": "/img/java.png",
+        "category": "Lenguajes"
+    },
+    {
+        "id": 6,
+        "name": "Javascript",
+        "description": "Aprende el Lenguaje de Programación Web más popular paso a paso con +20 Proyectos - Incluye Proyecto MERN Full Stack",
+        "price": 1000,
+        "hours": "50",
+        "image": "/img/js.png",
+        "category": "Lenguajes"
+    },
+    {
+        "id": 7,
+        "name": "C#",
+        "description": "Aprende a programar desde cero con .NET, C# 10, Visual Studio 2019 y Git, conviértete en programador.",
+        "price": 700,
+        "hours": "30",
+        "image": "/img/c.png",
+        "category": "Lenguajes"
+    },
+    {
+        "id": 8,
+        "name": "Kotlin para Android: Fundamentos de 0 a 100",
+        "description": "Domina Kotlin y Android! Aprender bien las bases para ser un Profesional. Desarrolla apps de calidad en Android Studio",
+        "price": 1000,
+        "hours": "150",
+        "image": "/img/kotlin.png",
+        "category": "Otros"
+    },
+    {
+        "id": 9,
+        "name": "React Native",
+        "description": "Aprende a crear sitios y aplicaciones web Full Stack utilizando React y Firebase. Todo desde cero y desde lo mas básico.",
+        "price": 500,
+        "hours": "100",
+        "image": "/img/react.png",
+        "category": "Otros"
+    },
+    {
+        "id": 10,
+        "name": "Flutter",
+        "description": "Push, Cámara, Mapas, REST API, SQLite, CRUD, Tokens, Storage, Preferencias de usuario, PlayStore, AppStore, Bloc y más!",
+        "price": 500,
+        "hours": "50",
+        "image": "/img/flutter.png",
+        "category": "Otros"
+    }
+]

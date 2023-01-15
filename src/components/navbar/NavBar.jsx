@@ -1,9 +1,13 @@
+import { Link, NavLink } from 'react-router-dom';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import BurguerButton from './BurgerButton';
+import { DiCodepen } from "react-icons/di";
+import CartWidget from "./CartWidget";
 
 function NavBar(){
 
+    const activeClassName = "activeLink";
     const [clicked, setClicked] = useState(false)
     const handleClick = () => {
         // cuando esta true lo pasa a false y al reves
@@ -12,23 +16,32 @@ function NavBar(){
     return (
         <>
         <NavContainer>
-         <h2>Dev-Work</h2>  
-         <div className={`links ${clicked ? 'active' : ''}`}>
-            <a onClick={handleClick} href="#h">Home</a>
-            <a onClick={handleClick} href="#h">Desarrollo Web</a>
-            <a onClick={handleClick} href="#h">Lenguajes de programación</a>
-            <a onClick={handleClick} href="#h">Otros cursos</a>
+            <Link to={"/"}>
+                <h2>Dev-Work<DiCodepen size ={"2.1rem"} /></h2>
+            </Link>
+        <div className={`links ${clicked ? 'active' : ''}`}>
+            <NavLink to={"/cursos"} className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }>Todos los cursos</NavLink>
+            <NavLink to={"/"}>Desarrollo Web</NavLink>
+            <NavLink to={"/"}>Lenguajes de programación</NavLink>
+            <NavLink to={"/"}>Otros cursos</NavLink>
          </div>
+         <CartWidget/>
          <div className='burguer'>
             <BurguerButton  clicked={clicked} handleClick={handleClick}  /> 
          </div>
          <BgDiv className={`initial ${clicked ? 'active' : ''}`}></BgDiv>
         </NavContainer>
-        </>
+        </>  
     )
 }
 
 export default NavBar;
+
+
+
+
 
 const NavContainer = styled.nav`
     h2{
