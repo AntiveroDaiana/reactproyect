@@ -6,7 +6,8 @@
         "price": 500,
         "hours": "10",
         "image": "/img/html.png",
-        "category": "Desarrollo Web"
+        "category": "Desarrollo Web",
+        "stock": 500
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "price": 600,
         "hours": "35",
         "image": "/img/css.png",
-        "category": "Desarrollo Web"
+        "category": "Desarrollo Web",
+        "stock": 500
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "price": 600,
         "hours": "10",
         "image": "/img/bootstrap.png",
-        "category": "Desarrollo Web"
+        "category": "Desarrollo Web",
+        "stock": 500
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "price": 1000,
         "hours": "100",
         "image": "/img/python.png",
-        "category": "Lenguajes"
+        "category": "Lenguajes",
+        "stock": 500
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "price": 800,
         "hours": "100",
         "image": "/img/java.png",
-        "category": "Lenguajes"
+        "category": "Lenguajes",
+        "stock": 500
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@
         "price": 1000,
         "hours": "50",
         "image": "/img/js.png",
-        "category": "Lenguajes"
+        "category": "Lenguajes",
+        "stock": 500
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@
         "price": 700,
         "hours": "30",
         "image": "/img/c.png",
-        "category": "Lenguajes"
+        "category": "Lenguajes",
+        "stock": 500
     },
     {
         "id": 8,
@@ -69,7 +76,8 @@
         "price": 1000,
         "hours": "150",
         "image": "/img/kotlin.png",
-        "category": "Otros"
+        "category": "Otros",
+        "stock": 500
     },
     {
         "id": 9,
@@ -78,7 +86,8 @@
         "price": 500,
         "hours": "100",
         "image": "/img/react.png",
-        "category": "Otros"
+        "category": "Otros",
+        "stock": 500
     },
     {
         "id": 10,
@@ -87,6 +96,7 @@
         "price": 500,
         "hours": "50",
         "image": "/img/flutter.png",
-        "category": "Otros"
+        "category": "Otros",
+        "stock": 500
     }
 ]

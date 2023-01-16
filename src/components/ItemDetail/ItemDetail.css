@@ -1,0 +1,72 @@
+.todo{
+    display: flex;
+    justify-content: center;
+}
+.item-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    min-height: 80vh;
+    width: 50%;
+}
+.item-detail img {
+    width: 56%;
+    margin: 20px;
+    border-radius: 5%;
+}
+
+.item-detail__text-container {
+        width: 85%;
+        margin: 20px auto;
+        border: 2px #B6D4B9 solid;
+        border-radius: 20px;
+}
+.item-detail__text-container h3 {
+            font-size: 2.5rem;
+            background: #B6D4B9;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            padding: 10px 0 5px 0;
+            margin: 0;
+            font-weight: bold;
+}        
+
+.item-detail__text-container em {
+            background: #B6D4B9;
+            display: block;
+}
+
+.item-detail__text-container-price {
+            font-size: 2rem;
+}
+
+.item-detail__text-container-back {
+            background: none;
+            border: none;
+            color: #CF1B7D;
+            font-weight: bold;
+}
+.item-detail__text-container-back:hover {
+    color: #CF1B7D
+};
+
+
+
+/*===== ESTILOS TABLET - MD =====*/
+@media only screen and (min-width: 768px) {
+    .item-detail {
+        flex-direction: row;    
+    }
+    .item-detail img {
+        width: 40%;
+    }
+    .item-detail__text-container {
+        margin: 20px;
+    }
+    a.item_link {
+        font-size: 0.5rem;
+    }
+}

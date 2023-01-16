@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { requestProductById } from "../../helpers/requestData";
+import { requestCursosById } from "../../helpers/requestData";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import NotFound from "../NotFound/NotFound";
 import Spinner from "../Spinner/Spinner";
 
+
 function ItemDetailContainer() {
 
-    const [product, setProduct] = useState(null);
+    const [cursos, setCursos] = useState(null);
     const [error, setError] = useState(null);
     const { itemId } = useParams();
 
     useEffect( () => {
-        requestProductById(Number(itemId))
+        requestCursosById(Number(itemId))
             .then( (res) => {
-                setProduct(res);
+                setCursos(res);
                 setError(null);
             })
             .catch( (err) => {
@@ -27,8 +28,8 @@ function ItemDetailContainer() {
             {
                 error
                     ? <NotFound />
-                    : product
-                        ? <ItemDetail {...product} />
+                    : cursos
+                        ? <ItemDetail {...cursos} />
                         : <Spinner />
             }
         </div>

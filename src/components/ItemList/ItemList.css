@@ -1,0 +1,30 @@
+.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.item-list {
+    width: 100%;
+    min-height: 70vh;
+    text-align: center;
+}
+.item-list hr {
+    width: 80%;
+    margin: 0 auto;
+}
+.item-list_title {
+    width: 70%;
+    opacity: 0.9;
+    margin: 20px 0;
+}
+
+/*===== ESTILOS TABLET - MD =====*/
+@media only screen and (min-width: 768px) {
+   
+        .item-list_title {
+            width: 50%;
+        }
+    
+}

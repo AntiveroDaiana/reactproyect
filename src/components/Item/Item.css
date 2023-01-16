@@ -1,0 +1,34 @@
+.item {
+    text-align: center;
+    margin: 10px 15px;;
+    color: #000000;
+    border: 1px #CF1B7D solid;
+    padding: 15px;
+    border-radius: 20px;
+    width: 40%;
+}
+.item img {
+    width: 40%;
+    border-radius: 10%;
+}
+
+.item_link{
+    background-color: #CF1B7D;
+    color: #FFFFFE;
+}
+
+.item_link:hover{
+    background-color: #B6D4B9; 
+    cursor: pointer;
+    color: #000000;
+}
+
+a.item_link{
+    border-radius: 20px;
+    padding: 6px 6px;
+    font-size: 1.5rem;
+    display: block;
+    width: 20%;
+    margin: 20px auto;
+    text-decoration: none;  
+}

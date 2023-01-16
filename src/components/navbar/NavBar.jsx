@@ -7,7 +7,10 @@ import CartWidget from "./CartWidget";
 
 function NavBar(){
 
+
+
     const activeClassName = "activeLink";
+
     const [clicked, setClicked] = useState(false)
     const handleClick = () => {
         // cuando esta true lo pasa a false y al reves
@@ -19,13 +22,19 @@ function NavBar(){
             <Link to={"/"}>
                 <h2>Dev-Work<DiCodepen size ={"2.1rem"} /></h2>
             </Link>
-        <div className={`links ${clicked ? 'active' : ''}`}>
+            <div className={`links ${clicked ? 'active' : ''}`}>
             <NavLink to={"/cursos"} className={({ isActive }) =>
                 isActive ? activeClassName : undefined
               }>Todos los cursos</NavLink>
-            <NavLink to={"/"}>Desarrollo Web</NavLink>
-            <NavLink to={"/"}>Lenguajes de programación</NavLink>
-            <NavLink to={"/"}>Otros cursos</NavLink>
+            <NavLink to={"/category/Desarrollo Web"} className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }>Desarrollo Web</NavLink>
+            <NavLink to={"/category/Lenguajes"} className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }>Lenguajes de programación</NavLink>
+            <NavLink to={"/category/Otros"} className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }>Otros cursos</NavLink>
          </div>
          <CartWidget/>
          <div className='burguer'>
