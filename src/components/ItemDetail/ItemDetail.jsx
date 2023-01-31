@@ -10,10 +10,7 @@ function ItemDetail( { id,image, name, description, hours, price, category, stoc
         navigate(-1);
     }
 
-    const handlerAddToCart = () => {
-        setStock ((prevStock) => prevStock -1 );
-        context.AddToCart({...info_for_item, quantity: quantity});
-    };
+
 
     return (
         <div className="todo">
