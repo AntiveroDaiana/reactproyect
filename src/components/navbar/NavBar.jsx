@@ -1,14 +1,22 @@
 import { Link, NavLink } from 'react-router-dom';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import styled from 'styled-components';
 import BurguerButton from './BurgerButton';
 import { DiCodepen } from "react-icons/di";
-import CartWidget from "./CartWidget";
+import { DataContext } from '../../context/Dataprovider.js';
+
+
 
 function NavBar(){
 
+    const value = useContext(DataContext);
+  const [carrito] = value.carrito;
+  const [menu, setMenu] = value.menu;
 
 
+  const toogleMenu = () =>{
+    setMenu(!menu)
+  }
     const activeClassName = "activeLink";
 
     const [clicked, setClicked] = useState(false)
@@ -36,7 +44,10 @@ function NavBar(){
                 isActive ? activeClassName : undefined
               }>Otros cursos</NavLink>
          </div>
-         <CartWidget/>
+         <div className="cart" onClick={toogleMenu}>
+        <box-icon name="cart"></box-icon>
+        <span className="item__total"> {carrito.length} </span>
+      </div>
          <div className='burguer'>
             <BurguerButton  clicked={clicked} handleClick={handleClick}  /> 
          </div>

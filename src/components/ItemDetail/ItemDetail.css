@@ -44,13 +44,15 @@
 }
 
 .item-detail__text-container-back {
-            background: none;
+            cursor: pointer;
+            background-color: #B6D4B9;
+            border-radius: 5%;
             border: none;
             color: #CF1B7D;
             font-weight: bold;
 }
 .item-detail__text-container-back:hover {
-    color: #CF1B7D
+    color: black;
 };
 
 

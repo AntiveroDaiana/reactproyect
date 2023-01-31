@@ -2,14 +2,13 @@ import { useNavigate } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css';
 
-function ItemDetail( { image, name, description, hours, price, category, stock } ) {
+
+function ItemDetail( { id,image, name, description, hours, price, category, stock } ) {
     
     const navigate = useNavigate();
-
-    const handleBack = () => {
+    const handleGoBack = () => {
         navigate(-1);
     }
-
 
 
     return (
@@ -26,8 +25,13 @@ function ItemDetail( { image, name, description, hours, price, category, stock }
                     <p><strong>Horas: </strong>{hours}</p>
                     <p><strong>Precio: </strong>{price}</p>
                     <strong className="item-detail__text-container-price"></strong>
-                    <ItemCount stock={stock}/>
-                    <button className="item-detail__text-container-back" onClick={handleBack}>Volver</button>
+                    {
+                        <ItemCount
+                            id={id}
+                            stock={stock}
+                            />
+                    }
+                    <button className="item-detail__text-container-back" onClick={handleGoBack}>Volver</button>
                 </div>
             </div>
         </article>    

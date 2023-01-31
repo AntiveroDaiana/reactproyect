@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './ItemCount.css';
+import { DataContext } from "../../context/Dataprovider";
 
 function ItemCount( {stock} ) {
-
+    const value = useContext(DataContext);
     const [counter, setCounter] = useState(1);
+    const addCarrito = value.addCarrito;
+    const [detalle] = useState([])
 
     const subtract = () => {
         if (counter > 1) {
@@ -24,7 +27,7 @@ function ItemCount( {stock} ) {
                 <strong className="count__subtract">{counter}</strong>
                 <button className="item-count_add" onClick={add}>+</button>
             </div>
-            <button className="item-count_add-to-car">Agregar al carrito</button>
+            <button onClick={() => addCarrito(detalle.id)}className="item-count_add-to-car">Agregar al carrito</button>
         </div>
     )
 }

@@ -5,7 +5,27 @@ h6{
     margin: 2%;
     font-size: 38%;
 }
+.cart{
+    padding-right: 4rem;
 
+}
+
+.item__total {
+    position: absolute;
+    top: 3rem;
+    right: 2.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 0rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-radius: 50%;
+    background-color: crimson;
+}
 .navbar__car {
     text-align: center;
     color: #000000;
@@ -16,13 +36,167 @@ h6{
     margin: 16px 32px;
     display: flex;
     align-items: center;
+    
 }   
 
 .navbar__car:hover {
         cursor: pointer;
         background-color: #CF1B7D;
     }
+.finalbtn {
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 60%;
+    border-color: white;
+}
+.finalbtn:hover{
+    cursor: pointer;
+    background-color: #000000;
+    color:white;
+    border-color: #000000;
+}
 
+.carritos{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease-in-out;
+    background-color: #000000;
+    z-index: 2;
+    padding-bottom: 5rem;
+    visibility: hidden;
+}
+
+.carrito{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    scale(.5);
+    width: 60%;
+    height: 80%;
+    border-radius: 8px;
+    overflow-y: scroll;
+    transition: all 300ms ease-in-out;
+    background-color: white;
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+.carrito h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.carrito.show{
+    visibility: visible;
+}
+.carrito.show{
+    transform: translate(-50%, -50%)
+    scale(1.1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.carrito__close box-icon{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transform: all 300ms ease-in-out;
+    margin: 3rem 0 0 2rem;
+}
+.carrito__close box-icon:hover{
+    fill: #CF1B7D;
+}
+
+.carrito__center{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.carrito__item{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    width: 80%;
+    margin: 2rem auto;
+    box-shadow: 0 1px 10px #B6D4B9;
+    border-radius: 5px;
+}
+
+.carrito__item h3{
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+.carrito__item .price{
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: start;
+    margin-left: 1rem;
+}
+
+.carrito__item box-icon{
+    fill: #B6D4B9;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: .3rem;
+}
+
+.carrito__item .cantidad {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.carrito__item .remove__item box-icon{
+    width: 60px;
+    height: 70px;
+    fill: #CF1B7D;
+    margin-top: 2rem;
+}
+
+.carrito__footer{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.carrito__footer h3{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.carrito__footer .finalbtn{
+    display: inline-block;
+    padding: .3rem 1rem;
+    font-size: 1.2rem;
+    background-color: #B6D4B9;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.carrito__footer .finalbtn{
+    display: inline-block;
+    padding: .3rem 1rem;
+    font-size: 1.2rem;
+    background-color: #B6D4B9;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.carrito__footer .finalbtn:hover{
+    background-color: #000000;
+    color: white;
+}
 
 /*===== ESTILOS LG =====*/
 @media only screen and (min-width: 768px) {
@@ -32,5 +206,8 @@ h6{
         border: black 1px solid;
         padding: 1%;
 
+    }
+    .carrito__item{
+        width: 92%;
     }
 }
