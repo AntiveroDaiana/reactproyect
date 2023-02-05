@@ -11,7 +11,7 @@ function ItemDetail( { id,image, name, description, hours, price, category, stoc
     }
 
 
-
+    console.log({ id,image, name, description, hours, price, category, stock } )
     return (
         <div className="todo">
           <article className="item-detail">
@@ -30,7 +30,11 @@ function ItemDetail( { id,image, name, description, hours, price, category, stoc
                         <ItemCount
                             id={id}
                             stock={stock}
-                            />
+                            category={category}
+                            image={image}
+                            itemName={name}
+                            price={price}
+                        />
                     }
                     <button className="item-detail__text-container-back" onClick={handleGoBack}>Volver</button>
                 </div>

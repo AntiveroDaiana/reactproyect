@@ -34,7 +34,7 @@ function ItemListContainer() {
     }, [ itemName, categoryId]);
 
     return (
-        <div>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "calc(100vh - 160px)"}}>
             {
                 loading
                     ? <Spinner />

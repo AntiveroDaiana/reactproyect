@@ -24,7 +24,7 @@ function ItemDetailContainer() {
     }, [itemId]);
 
     return (
-        <div>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
             {
                 error
                     ? <NotFound />

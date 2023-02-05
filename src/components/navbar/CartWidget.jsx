@@ -1,84 +1,58 @@
-import React, {useContext} from 'react'
-import './stylecart.css';
-import { DataContext } from '../../context/Dataprovider.js';
+import { useState } from "react";
+import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { cartContext } from "../../context/cartcontext";
+import "./style.css"
+import "./stylecart.css"
 
+const CartWidget = () => {
 
-export const Carrito = () => {
-    const value = useContext(DataContext);
-    const [menu, setMenu] = value.menu;
-    const [carrito, setCarrito] = value.carrito;
-    const [total] = value.total;
+  const{cart,quantityProdsCart, plus, rest, getItemTotal, getTotalCart}=useContext(cartContext)
   
-    const tooglefalse = () => {
-      setMenu(false);
-      };
-      
+  useEffect(()=>{
+    const total=quantityProdsCart(cart)
+  },[cart, quantityProdsCart])
   
-      const removeCurso = id =>{
-          if(window.confirm("¿Quieres suspender el producto?")){
-              carrito.forEach((item, index)=>{
-                  if(item.id === id){
-                      item.cantidad = 1;
-                      carrito.splice(index, 1)
-                  }
-              })
-              setCarrito([...carrito])
-          }
-      }
-  
-    const show1 = menu ? "carritos show" : "carrito";
-      const show2 = menu ? "carrito show" : "carrito";
-      
-  
-  
-    return (
-      <div className={show1}>
-        <div className={show2}>
-          <div onClick={tooglefalse} className="carrito__close">
-            <box-icon name="x"></box-icon>
-          </div>
-          <h2>Su Carrito</h2>
-          <div className="carrito__center">
-                      {
-                      
-                      
-                      carrito.length === 0 ? <h2 style={{textAlign: "center", fontSize: "3rem"}}>Carrito Vacio</h2> :<>
-                      {
-                      carrito.map((curso) => (
-              <div className="carrito__item" key={curso.id}>
-                <img src={curso.image} alt={curso.title} />
-                <div>
-                  <h3> {curso.title} </h3>
-                  <p className="price">${curso.price}</p>
-                </div>
-                <div>
-                                  <box-icon name="up-arrow" 
-                                      type="solid"
-                                      />
-                  <p className="cantidad">{curso.cantidad}</p>
-                                  <box-icon name="down-arrow" 
-                                      type="solid" 
-                                      />
-                </div>
-                              <div 
-                              onClick={() => removeCurso(curso.id)} 
-                              className="remove__item"
-                              >
-                  <box-icon name="trash" />
-                </div>
+  return (
+    <div className="cart">
+        {cart.map(item => {
+          return(
+          <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "15px", boxShadow: "box-shadow: 4px 7px 20px -7px rgba(0,0,0,0.75)"}}>
+            <div style={{display: 'flex', alignItems: "center", marginLeft: "20px"}}>
+              <h1>{`${item.name}, ${item.category}`}</h1>
+              <img src={item.image} width="50px" height="50px" alt="img" style={{marginLeft: "10px"}}/>
+            </div>
+            <div style={{display: "flex", height: "100%", alignItems: "center", width: "160px"}}>
+              <div style={{height: "40%", marginRight: "30px"}}>
+                <button onClick={() => plus(item)} className="item-detail__text-container-back">+</button>
+                <p>{item.quantity}</p>
+                <button onClick={() => rest(item)} className="item-detail__text-container-back">-</button>
               </div>
-                      ))
-                  };
-                      
-                      </>
-                      }
-          </div>
-  
-          <div className="carrito__footer">
-            <h3>Total: ${total}</h3>
-            <button className="btn">Finalizar compra</button>
-          </div>
+              <div style={{display: "flex", flexDirection: 'column', alignItems: "center", marginRight: "20px"}}>
+                <h3 style={{margin: "0"}}>Total</h3>
+                <h3 style={{margin: "0"}}>{item.name}</h3>
+                <h3 style={{margin: "0"}}>{`${getItemTotal(item)}`}</h3>
+              </div>
+            </div>
+          </div> 
+          )
+        })}
+        {cart.length > 0 ?
+        <div style={{alignSelf: "center", padding: "20px", border: "1px solid black", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <h3 style={{margin: "0"}}>{`El total del carrito es:`}</h3>
+          <h3 style={{margin: "0"}}>${getTotalCart()}</h3>
+        </div> :
+        <div style={{alignSelf: "center"}}>
+          <h3>Carrito Vacio</h3>
         </div>
-      </div>
-    );
-  };
+        }
+    </div>
+    
+  );
+};
+
+export default CartWidget;
+
+
+
+

@@ -1,24 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import BurguerButton from './BurgerButton';
 import { DiCodepen } from "react-icons/di";
-import { DataContext } from '../../context/Dataprovider.js';
-
-
+import CartWidget from "./CartWidget"
+import { cartContext } from "../../context/cartcontext";
+import { useContext } from 'react';
 
 function NavBar(){
 
-    const value = useContext(DataContext);
-  const [carrito] = value.carrito;
-  const [menu, setMenu] = value.menu;
-
-
-  const toogleMenu = () =>{
-    setMenu(!menu)
-  }
+  
     const activeClassName = "activeLink";
-
+    const { cart, quantityProdsCart } = useContext(cartContext);
     const [clicked, setClicked] = useState(false)
     const handleClick = () => {
         // cuando esta true lo pasa a false y al reves
@@ -43,11 +36,11 @@ function NavBar(){
             <NavLink to={"/category/Otros"} className={({ isActive }) =>
                 isActive ? activeClassName : undefined
               }>Otros cursos</NavLink>
+            <NavLink to={"/cart"} className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }>Carrito {quantityProdsCart(cart)}</NavLink>
          </div>
-         <div className="cart" onClick={toogleMenu}>
-        <box-icon name="cart"></box-icon>
-        <span className="item__total"> {carrito.length} </span>
-      </div>
+    
          <div className='burguer'>
             <BurguerButton  clicked={clicked} handleClick={handleClick}  /> 
          </div>

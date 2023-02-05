@@ -6,3 +6,11 @@
 
 }
 
+.item-detail__text-container-back {
+    cursor: pointer;
+    background-color: #B6D4B9;
+    border-radius: 5%;
+    border: none;
+    color: #CF1B7D;
+    font-weight: bold;
+}

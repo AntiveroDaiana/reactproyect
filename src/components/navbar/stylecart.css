@@ -5,9 +5,11 @@ h6{
     margin: 2%;
     font-size: 38%;
 }
+
 .cart{
     padding-right: 4rem;
-
+    display: flex;
+    flex-direction: column;
 }
 
 .item__total {

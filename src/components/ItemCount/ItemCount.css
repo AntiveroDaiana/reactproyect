@@ -13,17 +13,17 @@
             font-weight: bold;
             border: 1px solid #B6D4B9;
 }            
-.item-count .item-count_subtract .item-count_add{
+.item-count .item-count__subtract .item-count__add{
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;             
 }
 
-.item-count_subtract button {
+.item-count__subtract button {
     border-radius: 29%;
 }
 
     
-.item-count .item-count_subtract .item-count_add:hover {
+.item-count .item-count__subtract .item-count__add:hover {
                 background: #B6D4B9;
             }
 
@@ -35,7 +35,7 @@
         }
 
 
-.item-count_add-to-car {
+.item-count__add-to-car {
         border: 1px solid #000000;
         border-radius: 20px;
         background: #B6D4B9;
@@ -44,8 +44,17 @@
         margin: 10px;
         color: #CF1B7D;
         font-weight: bold;
+        cursor: pointer;
     }
-        .item-count_add-to-car:hover {
+        .item-count__add-to-car:hover {
             background: #B6D4B9;
         }
     
+.item-detail__text-container-back {
+    cursor: pointer;
+    background-color: #B6D4B9;
+    border-radius: 5%;
+    border: none;
+    color: #CF1B7D;
+    font-weight: bold;
+}

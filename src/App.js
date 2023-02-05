@@ -1,23 +1,24 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import NavBar from './components/navbar/NavBar';
-import {Carrito} from './components/navbar/CartWidget';
-import {DataProvider} from './context/Dataprovider';
+import Cart from './components/navbar/CartWidget';
 import Desarrollo from './pages/DesarrolloWeb/Desarrollo';
 import Lenguajes from './pages/Lenguajes/Lenguajes';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Error from './pages/Error/Error';
 import Otros from './pages/otros/otros';
+import Admin  from '../src/Admin/Admin';
+import CartProvider from './context/Dataprovider';
 import 'boxicons';
 
 
 function App() {
   return (
-    <DataProvider>
-    <BrowserRouter>
+    <>
+       <BrowserRouter>
+       <CartProvider>
       <NavBar />
-      <Carrito />
       <Routes>
         <Route path='*' element={<Error />} />
         <Route path="/cursos" element={ <ItemListContainer /> } />
@@ -27,9 +28,12 @@ function App() {
         <Route path="/category/:categoryId" element={ <ItemListContainer /> } />
         <Route path='desarrollo' element={<Desarrollo />} />
         <Route path='otros' element={<Otros />} />
+        <Route path='admin' element={<Admin/>} />
+        <Route path="cart" element={<Cart/>} />
       </Routes>
+      </CartProvider>
     </BrowserRouter>
-    </DataProvider>
+    </>
   );
 }
 
